@@ -1,0 +1,66 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 16%;">
+<!-- 同城设计师头部 -->
+<view class="citydesign-top">
+	<image class="citydesign-topbg" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/tuobg.png?v=3"></image>
+	<view class="headimg"><image  mode="widthFix" src="{{userInfo.avatarUrl}}"></image></view>
+	<view class="loginout" bindtap="loginout">【退出当前账户】</view>
+	<view class="name">
+		<text class="username">{{userInfo.nickName}}</text> <image class="sex-img" mode="widthFix" src="{{userInfo.gender == 1?sexImg.man:sexImg.femail}}"></image> | <image class="duan-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image> 
+		<text class="duanwei">王牌装饰家</text>
+	</view>
+	<view class="jifen">
+		<text>积分：0</text><text bindtap="routerAtten" data-type="atten">关注：{{gz_num}}</text><text bindtap="routerAtten" data-type="fans">粉丝：{{fans_num}}</text>
+	</view>
+	<view class="top-tab">
+		<view bindtap="tabRouter" data-type="collect"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab1.jpg"></image></view>
+		<view bindtap="tabRouter" data-type="article"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab2.jpg"></image></view>
+		<view bindtap="tabRouter" data-type="jifen"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab3.jpg"></image></view>
+	</view>
+	<button class="addRell" bindtap="addRell">添加我的作品集</button>
+</view>
+<view class="tabbox">
+	<view class="viewlist-title" ><text></text><view>我的作品集</view></view>
+</view>
+<view class="content">
+	<view class="view-list" style="display: {{!nodata?'block':'none'}};">
+		<block wx:for="{{datalist}}" wx:key="key" wx:for-item="item" >
+			<view class="view-listdata" data-id="{{item.id}}" bindtap="router">
+				<view class="view-listdataimg">
+					<image mode="widthFix" src="{{item.pic}}"></image>
+				</view>
+				<view class="view-listdata-des">
+					<view class="text">{{item.title}}</view>
+				</view>
+				<view class="viewlist-bottom">
+					<view class="yue">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+						<text>{{item.view}}</text>
+					</view>	
+					<view class="zan" catchtap="zan" data-index="{{index}}">
+						<image class="{{item.zhuantai == 1 ?'zan-active':''}}"  mode="widthFix" src="{{item.zhuantai== 0?zan.default:zan.active}}"></image>
+						<text class="{{item.zhuantai == 1 ?'zan-text':''}}">{{item.tags}}</text>
+					</view>	
+					<view class="write" catchtap="write" data-id="{{item.id}}">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/write.png"></image>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="view-list nodata" style="display: {{nodata?'block':'none'}};">
+		您还没有作品，快去上传吧~
+	</view>
+</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{nomore}}">
+  <view class="nomore" >--End--</view>
+</view>
+<!-- 底部 -->
+</view>
+<include src='/template/footerList/footerList.wxml'></include>
+</scroll-view>

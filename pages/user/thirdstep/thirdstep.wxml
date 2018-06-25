@@ -1,0 +1,42 @@
+<view class="top" style="display: {{!nocover?'block':'none'}}">
+	<view class="title">
+		<view class="back" bindtap="back"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/back.png"></image></view>
+		<view class="title-text">创建真实案例</view>
+		<view class="next-step" bindtap="nestStep">下一步</view>
+	</view>
+	<view style="max-height: 500rpx;overflow: scroll;">
+		<image  bindtap="choseCover" mode="widthFix"  src="{{titledata.cover == '' ? 'http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/usethum.jpg':titledata.cover}}"></image>
+	</view>
+	<view class="datapick">
+	 <view class="pick-box">
+		<view class="label">文章标题<text>*</text></view>	
+		<view class="input"><input type="text" placeholder="取一个好标题，让更多人分享你的快乐" value="{{titledata.title}}" data-type="title" bindinput="getValue"></input></view>
+	 </view>
+	 <view class="pick-box des">
+		<view class="label">文章概述</view>	
+		<view class="input">
+			<!-- <input type="text" placeholder="让粉丝一目了然" value="{{titledata.des}}" data-type="des" bindinput="getValue"></input> -->
+			<textarea wx:if="{{textareashow}}" name="" class="des1" selection-start="{{ cursorIndex }}"
+    selection-end="{{ cursorIndex }}" placeholder="让粉丝一目了然" value="{{titledata.des}}" data-type="des" bindinput="getValue"></textarea>
+		</view>
+	 </view>
+	</view>
+</view>
+<view class="getpicture" style="display: {{nocover?'block':'none'}}">
+	<view class="title">
+		<view class="title-text">选择封面图</view>
+		<!-- <view class="next-step" >完成</view> -->
+	</view>
+	<view class="takephoto">
+		<view bindtap="chooseImg" data-type="camera"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/use-getpicture1.jpg"></image></view>
+		<view bindtap="chooseImg" data-type="album"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/use-getpicture2.jpg"></image></view>
+	</view>
+</view>
+<view class="Mb2" style="display: {{mbInfo?'block':'none'}};" >
+	<view class="Mb-img"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notic-nocomplate.png"></image>
+		<view class="close-x" bindtap="closeMb"></view>
+	</view>
+</view>
+ <loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>

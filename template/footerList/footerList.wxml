@@ -1,0 +1,10 @@
+
+<view class='footerList'>
+   <view class='list' wx:for="{{footerState}}" wx:key="" data-number="{{item.number}}" bindtap="navigateTo">
+      <!-- <contact-button class='list' wx:if="{{ item.text == '咨询客服' }}"></contact-button> -->
+      <view class='part'>
+         <image class="img{{item.number}}" mode="widthFix" src="{{ item.key && item.selectedIconPath || item.iconPath  }}"></image>
+         <view class="{{item.key && 'select' }}">{{item.text}}</view>
+      </view>  
+   </view>  
+</view>

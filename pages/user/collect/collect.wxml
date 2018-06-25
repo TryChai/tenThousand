@@ -1,0 +1,47 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view >
+<image mode="widthFix" src="{{banner}}"></image>
+<view class="content">
+	<view class="view-list" style="display: {{!nodata?'block':'none'}};">
+		<block wx:for="{{datalist}}" wx:key="key" wx:for-item="item" >
+			<view class="view-listdata" data-id="{{item.id}}" bindtap="router" data-type="{{item.type}}">
+			  <view class="viewlist-title" ><text></text><view>{{item.title}}</view></view>
+			   <view class="view-listbox">
+				    <view class="view-listdataimg">
+					    <image style="width:100%;height: 230rpx;" src="{{item.pic}}"></image>
+				    </view>
+				    <view class="view-listdata-des">
+					    <!-- <view class="text" wx:if="{{item.des.ke!='undefined'&&item.des.ke!=null&& item.des.ke!=''}}">{{item.des.ke}}</view> -->
+					    <view class="text" wx:if="{{item.des!=null&& item.des!=''}}"><text>{{item.des}}</text></view>
+				    </view>
+			    </view>
+				<view class="viewlist-bottom">
+					<view class="yue">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+						<text>{{item.view}}</text>
+					</view>	
+					<view class="zan" catchtap="ping" data-id="{{item.id}}" data-type="{{item.type}}">
+						<image class="" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/ping.png"></image><text>{{item.comment}}</text>
+					</view>	
+					<view class="favor" catchtap="cancelFavor" wx:if="{{collect}}" data-type="{{item.type}}" data-id="{{item.id}}">
+						<image mode="widthFix" src="{{favorState==1?favor.active:favor.default}}"></image>
+					</view>
+				</view>
+			</view>
+		</block>
+	</view>
+	<view class="view-list nodata" style="display: {{nodata?'block':'none'}};">
+		{{nodata_text}}
+	</view>
+</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{nomore}}">
+  <view class="nomore">--End--</view>
+</view>
+<!-- 底部 -->
+</view>
+</scroll-view>

@@ -1,0 +1,31 @@
+<view class="yuyue">
+	<view class="citydesign-top">
+		<view class="headimg"><image  mode="widthFix" src="{{userInfo.avatarUrl}}"></image></view>
+		<view class="name">
+			<text class="username">{{userInfo.nickName}}</text> <image class="sex-img" mode="widthFix" src="{{userInfo.gender == 1 ? sexImg.man : sexImg.femail}}"></image> | <image class="duan-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image> 
+			<text class="duanwei">王牌装饰家</text>
+		</view>
+	</view>
+	<image class="pic1" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/baoimg_01.jpg"></image>
+	<view class="form">
+		<view class="userName" >
+		<!--{{classgif ? 'gif' : ''}}-->
+			<input id="userName" type="text" placeholder-class="psection" bindtap="btn_click" bindchange="bindChange" placeholder="请输入您的姓名" value="{{userName}}" maxlength="20"/>
+		</view>
+		<view class="userPhone">
+			<input id="userPhone" placeholder-class="psection" bindchange="bindChange" placeholder="请输入您的电话" bindtap="btn_click" maxlength="11" type="number" value="{{userPhone}}"/>
+		</view>
+		<view bindtap="yuyueSubmit" class="pic2" >预约免费量尺</view>
+		<text>我们承诺：您的信息将被严格保密</text>
+    </view>
+	<!--报名成功蒙版-->
+	<view class="yuyueMb" style="display:{{display}}" bindtap="hide_click">
+		<view class="yuyueMb-img">
+	       <image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/yuyue_success.png"></image>
+		 	<view class="yuyue-close"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+		</view>
+	</view> 
+	
+</view>
+<!-- 底部 -->
+<!-- <include src='/template/footerList/footerList.wxml'></include> -->

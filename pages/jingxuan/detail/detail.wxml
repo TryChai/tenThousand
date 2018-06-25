@@ -1,0 +1,171 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<scroll-view scroll-top="{{scrollTop}}" scroll-into-view="{{toView}}" scroll-with-animation="true" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscroll="scroll">
+<view class="store-edtail" >
+	<view class="topstyle" id="inToView01">
+		  <image style="width: 100%;height:420rpx;" src="{{detail.pic}}"></image>
+		  <!-- 关注栏跟信息栏 -->
+		  <view>
+			  <!-- <view class="top-guanzhu">
+			  	<view class="head">
+			  		<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/head.png"></image>
+			  	 </view>
+			  	 <view class="name">
+					<view class="username">张楚</view>
+					<view class="time">2018-01-12</view>
+			  	 </view>
+			  	 <view class="atten" bindtap="atten">{{atten?'已关注':'+关注'}}</view>
+			  </view> -->
+			  <view class="anli-box" >
+				<view class="anli-title"><text></text><view>{{detail.title}}</view></view>
+				<view class="anli-xinxi" style="display: {{detail.customer == null||detail.house_type == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/peo.png"></image>
+					</view>
+					<view class="anli-lable">客户姓名：</view>
+					<view class="anli-data">{{detail.customer}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.house_type == null||detail.house_type == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/huxing.png"></image>
+					</view>
+					<view class="anli-lable">房子户型：</view>
+					<view class="anli-data">{{detail.house_type}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.house_info == null||detail.house_info == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loupan.png"></image>
+					</view>
+					<view class="anli-lable">楼盘信息：</view>
+					<view class="anli-data">{{detail.house_info}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.des == null||detail.des == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jianjie.png"></image>
+					</view>
+					<view class="anli-lable">内容简介：</view>
+					<view class="anli-data">{{detail.des}}</view>
+				</view>	
+			  </view>
+		  </view>	
+	</view>
+	<!-- 底部悬浮窗 -->
+	<view class="store-detail-footer">
+		<view class="viewlist-bottom">
+			<view class="viewlist-bottom-border">
+				<view class="yue">
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+					<text>{{parseInt(detail.view)-999>0 ? '999+':detail.view}}</text>
+				</view>	
+				<view class="zan" bindtap="zan">
+					<image class="{{zanState?'zan-active':''}}"  mode="widthFix" src="{{!zanState?zan.default:zan.active}}"></image>
+					<text class="{{zanState?'zan-text':''}}">{{parseInt(detail.tags)-999>0?'999+':detail.tags}}</text>
+				</view>	
+				<view class="ping" bindtap="ping">
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/ping.png"></image>
+					<text>{{parseInt(detail.comment)-999>0?'999+':detail.comment}}</text>
+				</view>	
+				<view class="favor" bindtap="favor">
+					<image mode="widthFix" src="{{favorState==1?favor.active:favor.default}}"></image>
+				</view>
+			</view>
+		</view>
+	</view>
+	<!-- 富文本内容 -->
+	<view style="background: #fff !important;padding:0 10px;overfloaw:hidden;">
+		<template is="wxParse" data="{{wxParseData:insertData.nodes}}" />
+	</view>
+	<!-- 关于设计师 -->
+	<view class="design" style="display: none">
+		<view class="design-title"><text></text><view>关于设计师</view></view>
+		<view class="design-lanmu">
+			<view class="design-left">
+				<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/head.png"></image>
+			</view>
+			<view class="design-right">
+				<view class="design-xinxi">
+					<view class="design-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/peo.png"></image>
+					</view>
+					<view class="design-lable">姓名：</view>
+					<view class="design-data">林先生</view>
+				</view>	
+				<view class="design-xinxi">
+					<view class="design-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/phone.png"></image>
+					</view>
+					<view class="design-lable">电话：</view>
+					<view class="design-data">138138138</view>
+				</view>	
+				<view class="design-xinxi">
+					<view class="design-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/mendian.png"></image>
+					</view>
+					<view class="design-lable">门店：</view>
+					<view class="design-data">广东省广州市美化街道东风东路767号东宝大厦</view>
+				</view>	
+				<view class="disign-tag">关爱客户的设计才是好设计</view>
+				<view class="design-btn">预约免费设计</view>
+			</view>
+		</view>
+	</view>
+	<!-- 评论内容 -->
+	<view class="discuss-box" id="inToView-discuss">
+		<view class="discuss-title"><text></text><view>大家这样说</view></view>
+		<view class="discuss-input">
+			<input type="text" placeholder="写下你的评论" focus="{{focus}}" adjust-position="{{adjust}}" bindblur="getInput" value="{{input_value}}"></input>
+			<view class="send" bindtap="send">发送</view>
+		</view>
+		<view class="discusslist"  wx:for="{{comments}}" wx:key="key" wx:for-item="item">
+			<view class="discuss-list">
+				<view class="discusslist-img">
+					<image mode="widthFix" src="{{item.user_head_img}}"></image>
+				</view>
+				<view class="discusslist-right">
+					<view class="nickname-box">
+						<view class="nickname">
+							<view class="name">{{item.nickname}}</view>
+							<view class="date">{{item.post_date}}</view>
+						</view>
+						<view class="like"><view class="like-img" bindtap="like" data-index="{{index}}" data-like="{{item.has_zan}}" data-id="{{item.id}}"><image mode="widthFix" src="{{item.has_zan == 1?like.active:like.default}}"></image></view><text>{{item.tags}}</text></view>
+					</view>
+					<view class="content">{{item.comments}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- 推荐案例 -->
+	<view class="tuijian">
+		<view class="tuijian-title"><text></text><view>更多精彩案例</view></view>
+		<view class="tuijian-ul" wx:for="{{tuijian}}" wx:key="{{key}}" wx:for-item="item">
+			<view class="tuijian-li" data-id="{{item.id}}" data-type="{{item.type}}" bindtap="router">
+				<view class="tuijian-img">
+					<image src="{{item.pic}}"></image>
+				</view>
+				<view class="tuijian-text">{{item.title}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 评论结果弹窗 -->
+	<view class="discussMb" style="display:{{discussMb?'block':'none'}};">{{comments_text}}</view>
+	<!-- 未登录弹窗 -->
+	<view class="loginMb" style="display: {{loginMb?'block':'none'}};">
+		<view class="loginbox">
+			<view class="logintitle">
+				<text class="logintext">您还未登录哦~\n登录以后就可以收藏啦~</text>
+			</view>
+			<view class="loginbtn" bindtap="login">点击登录</view>
+			<view class="loginX" bindtap="loginX"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+		</view>
+	</view>
+	 <loading hidden="{{loading_hidden}}">
+	  加载中...
+	</loading>
+	<view class="top" style="display: {{totop}}" bindtap="totop">
+		<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/everyday_new_miniprogram/images/up-top.png?v=5"></image>
+	</view>
+</view>
+<!-- 底部 -->
+<!-- <include src='/template/footerList/footerList.wxml'></include> -->
+</scroll-view>

@@ -1,0 +1,156 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.1",
+	"appid": "wxcb74c9ac258e11e5",
+	"projectname": "tenthousand",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "jingxuan",
+					"pathName": "pages/jingxuan/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shaijia",
+					"pathName": "pages/shaijia/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "jinxuan-detail",
+					"pathName": "pages/jingxuan/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "citydesign",
+					"pathName": "pages/citydesign/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "citydesign-detail",
+					"pathName": "pages/citydesign/detail/detail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "shejishi fenglu ",
+					"pathName": "pages/design/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "card",
+					"pathName": "pages/design/card/card",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "atten",
+					"pathName": "pages/atten/atten",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "reels",
+					"pathName": "pages/design/reels/reels",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "hasloginyuyue",
+					"pathName": "pages/yuyue/haslogin/yuyue",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "userlogin",
+					"pathName": "pages/user/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "friend",
+					"pathName": "pages/user/friend/friend",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "firststep",
+					"pathName": "pages/user/firststep/firststep",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "search",
+					"pathName": "pages/user/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "secondstep",
+					"pathName": "pages/user/secondstep/secondstep",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "thirdstep",
+					"pathName": "pages/user/thirdstep/thirdstep",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "fourstep",
+					"pathName": "pages/user/fourstep/fourstep",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "collect",
+					"pathName": "pages/user/collect/collect",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "nologinyuyue",
+					"pathName": "pages/yuyue/nologin/yuyue",
+					"query": ""
+				}
+			]
+		}
+	}
+}

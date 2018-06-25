@@ -1,0 +1,29 @@
+<view class="title">
+	<view class="back" bindtap="back"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/back.png"></image></view>
+	<view class="title-text">创建真实案例</view>
+	<view class="next-step" bindtap="nestStep">下一步</view>
+</view>
+<view class="little-title">第二步 屋主信息填写</view>
+<view class="datapick">
+ <view class="pick-box">
+	<view class="label">职业<text>*</text></view>	
+	<view class="input"><input type="text" placeholder="您从事什么工作？" value="{{jobdata.job}}" data-type="job" bindinput="getValue"></input></view>
+ </view>
+ <view class="pick-box">
+	<view class="label">地区<text>*</text></view>	
+	<view class="input"><input type="text" placeholder="装修的房子在哪里？" value="{{jobdata.address}}" data-type="address" bindinput="getValue"></input></view>
+ </view>
+ <view class="pick-box introduction">
+	<view class="label">个人简介</view>	
+	<view class="input">
+	<!-- 	<input type="text" placeholder="给个机会大家认识你，寻找志同道合的朋友" value="{{jobdata.introduction}}" data-type="introduction" bindinput="getValue"></input> -->
+		<textarea wx:if="{{textareashow}}" name="" class="introduction1" cols="30" rows="10" placeholder="给个机会大家认识你，寻找志同道合的朋友" value="{{jobdata.introduction}}" selection-start="{{ cursorIndex }}"
+    selection-end="{{ cursorIndex }}" data-type="introduction" bindinput="getValue"></textarea>
+	</view>
+ </view>
+</view>
+<view class="Mb2" style="display: {{mbInfo?'block':'none'}};" >
+	<view class="Mb-img"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notic-nocomplate.png"></image>
+		<view class="close-x" bindtap="closeMb"></view>
+	</view>
+</view>

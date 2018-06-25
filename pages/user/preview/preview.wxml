@@ -1,0 +1,70 @@
+<import src="../../../wxParse/wxParse.wxml" />
+<scroll-view scroll-top="{{scrollTop}}" scroll-into-view="{{toView}}" scroll-with-animation="true" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscroll="scroll">
+<view >
+	<view class="topstyle" id="inToView01">
+			<view style="width: 100%;max-height: 420rpx;overflow: hidden;"> 
+		 		 <image mode="widthFix" src="{{detail.pic}}" catchtap="imgPrew" data-url="{{detail.pic}}"></image>
+			</view>
+		  <!-- 关注栏跟信息栏 -->
+		  <view>
+			  <view class="top-guanzhu">
+			  	<view class="head">
+			  		<image mode="widthFix" src="{{userInfo.avatarUrl}}"></image>
+			  	 </view>
+			  	 <view class="name">
+					<view class="username">{{userInfo.nickName}}</view>
+					<view class="time">{{detail.post_date}}</view>
+			  	 </view>
+			  </view>
+			  <view class="anli-box" >
+				<view class="anli-title"><text></text><view>{{detail.title}}</view></view>
+				<view class="anli-xinxi" style="display: {{detail.customer == null||detail.house_type == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/peo.png"></image>
+					</view>
+					<view class="anli-lable">客户姓名：</view>
+					<view class="anli-data">{{detail.customer}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.house_type == null||detail.house_type == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/huxing.png"></image>
+					</view>
+					<view class="anli-lable">房子户型：</view>
+					<view class="anli-data">{{detail.house_type}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.house_cost == null||detail.house_cost == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loupan.png"></image>
+					</view>
+					<view class="anli-lable">楼盘信息：</view>
+					<view class="anli-data">{{detail.house_cost}}</view>
+				</view>	
+				<view class="anli-xinxi" style="display: {{detail.jianjie == null||detail.jianjie == '' ?'none':'block'}};">
+					<view class="anli-icon">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jianjie.png"></image>
+					</view>
+					<view class="anli-lable">内容简介：</view>
+					<view class="anli-data">{{detail.jianjie}}</view>
+				</view>	
+			  </view>
+		  </view>	
+	</view>
+	
+	<!-- 富文本内容 -->
+	<view class="content">
+		<block wx:for="{{list}}" wx:key="key" wx:for-item="item">
+			<view  wx-if="{{item.text!='' || item.img.length >0}}" class="data-anli-li">
+				<view class="tip">{{item.style=='hu'?'户型':item.style=='ke'?'客厅':item.style=='can'?'餐厅':item.style=='wo'?'卧室':item.style=='er'?'儿童房':item.style=='shu'?'书房':item.style=='chu'?'厨房':item.style=='yang'?'阳台':item.style=='guo'?'过道':item.style=='qi'?'其他':''}}</view>
+				<view class="list-img" wx:for="{{item.img}}" wx:key="key" wx:for-item="v">
+					<image mode="widthFix" src="{{v}}" catchtap="imgPrew" data-url="{{v}}"></image>
+			   </view>
+				<view class="list-des"><text>{{item.text}}</text></view>
+			</view>
+		</block>
+	</view>
+	<view class="top" style="display: {{totop}}" bindtap="totop">
+		<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/everyday_new_miniprogram/images/up-top.png?v=5"></image>
+	</view>
+</view>
+</scroll-view>

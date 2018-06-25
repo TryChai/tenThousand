@@ -1,0 +1,150 @@
+page{background: #eeeeee;}
+.dataList{
+  background: #fff;
+}
+.dataList-ul{
+  padding-bottom: 3%;
+}
+.dataList-li{
+  display: flex;
+  padding : 3% 0%;
+  overflow: hidden;
+  position: relative;
+  width: 92%;
+  margin:auto;
+  border-bottom: 2rpx solid #bfbfbf; 
+}
+.dataList-li .headimg{
+  width: 15%;
+}
+.dataList-li .headimg image{
+  border-radius: 100%;
+}
+.dataList-li .name{
+  margin-left: 5%;
+}
+.dataList-li .name .username{
+  font-size: 30rpx;
+  color: #313131;
+  line-height: 1.3rem;
+}
+.dataList-li .name .fans{
+  font-size: 24rpx;
+  color: #626262;
+  line-height: 1.3rem;
+}
+.dataList-li .atten{
+  float: right;
+  background: #fff720;
+  position: absolute;
+  top: 31%;
+  right: 4%;
+  padding:1.5% 5%;
+  font-size: 26rpx;
+  color: #313131;
+  border-radius: 80rpx;
+}
+.nodata{
+  background: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  padding:25% 0;
+}
+.Mb{
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  bottom: 0%;
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 99;
+}
+.Mb-box{
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  background: #fff;
+  color: #fff;
+  width: 95%;
+  /*height: 9rem;*/
+  margin:auto;
+  border-radius: .8rem;
+  padding-top: 2%;
+}
+.Mb-box .Mb-title{
+  text-align: center;
+  font-size: 30rpx;
+  color: #313131;
+  padding:3% 0;
+}
+.Mb-box .Mb-sure{
+  background: #ec6941;
+  color: #fff;
+  width: 89%;
+  padding:2% 0;
+  text-align: center;
+  border-radius: .8rem;
+  font-size: 30rpx;
+  letter-spacing: 10rpx;
+  text-indent: 10rpx;
+  margin:0.3rem auto;
+}
+.Mb-box .Mb-cancel{
+  background: #e5e5e5;
+  color: #313131;
+  width: 89%;
+  margin:.8rem auto;
+  padding:2% 0;
+  text-align: center;
+  border-radius: .8rem;
+  font-size: 30rpx;
+  letter-spacing: 10rpx;
+  text-indent: 10rpx;
+}
+.bottom-in{
+  animation: up .5s ease-in-out;
+  animation-fill-mode :forwards ;
+}
+@-webkit-keyframes up {
+    0% {bottom:-26%;}
+    100% {bottom:0%;}
+}
+.bottom-down{
+  animation: down .6s ease-in-out;
+  animation-fill-mode :forwards ;
+}
+@-webkit-keyframes down {
+    0% {bottom:0%;}
+    100% {bottom:-30%;}
+}
+.loading-box{
+  padding:3% 0 ;
+  text-align: center;
+  overflow: hidden;
+}
+.loading-box .loading-massage{
+  overflow: hidden;
+  width:100%;
+}
+.loading-box .loading-massage .loading-img{
+  width:6%;
+  float: left;
+  margin-left: 40%;
+  margin-right: 2%;
+}
+.loading-box .loading-massage .loading-img image{
+  width:100%;
+}
+.loading-box .loading-massage .loading-text{
+  text-align: center;
+  font-size: 30rpx;
+  float: left;
+  color: #c2c2c2;
+}
+.loading-box .nomore{
+  display: block;
+  font-size: 34rpx;
+  clear: both;
+}

@@ -1,0 +1,45 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 17%;">
+<image mode="widthFix" src="{{banner}}"></image>
+<view class="tab-hot">
+	<view bindtap="timeChange"><image mode="widthFix" src="{{timeState == 0 ? time.default:time.active}}"></image></view>
+	<view bindtap="hotChange"><image mode="widthFix" src="{{hotState == 0 ? hot.default:hot.active}}"></image></view>
+</view>
+<view class="content">
+	<block wx:for="{{datalist}}" wx:for-item="item" wx:key="{{key}}">
+		<view class="view-list"  >
+			<view class="viewlist-title" bindtap="router" data-id="{{item.id}}" ><text></text><view>{{item.title}}</view></view>
+			<image  style="width:100%;max-height: 420rpx;overflow: hidden;"  bindtap="router" data-id="{{item.id}}" src="{{item.pic}}"></image>
+			<view class="viewlist-bottom">
+				<view class="yue">
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+					<text>{{item.view}}</text>
+				</view>	
+				<view class="zan" catchtap="zan" data-index="{{index}}">
+					<image class="{{item.zhuantai == 1 ?'zan-active':''}}"  mode="widthFix" src="{{item.zhuantai== 0?zan.default:zan.active}}"></image>
+					<text class="{{item.zhuantai == 1 ?'zan-text':''}}">{{item.tags}}</text>
+				</view>	
+				<view class="ping" catchtap="router" data-id="{{item.id}}" >
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/ping.png"></image>
+					<text>{{item.comment}}</text>
+				</view>	
+			</view>
+		</view>
+	</block>
+</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{loading_box}}">
+  <view class="loading-massage" hidden="{{loading_msg}}">
+    <view class="loading-img" >
+       <image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loading.gif"></image> 
+    </view>
+    <view class="loading-text" >加载中</view>
+  </view>
+  <view class="nomore" hidden="{{nomore}}">--  End  --</view>
+</view>
+</view>
+</scroll-view>

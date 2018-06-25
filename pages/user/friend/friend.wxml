@@ -1,0 +1,51 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 2%;">
+<!-- 同城设计师头部 -->
+<view class="citydesign-top">
+	<image class="citydesign-topbg" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/tuobg.png?v=3"></image>
+	<view class="headimg"><image  mode="widthFix" src="{{userInfo.headimgurl}}"></image></view>
+	<view class="name">
+		<text class="username">{{userInfo.nickname}}</text> <image class="sex-img" mode="widthFix" src="{{userInfo.sex == 1?sexImg.man:sexImg.femail}}"></image> | <image class="duan-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image> 
+		<text class="duanwei">王牌装饰家</text>
+	</view>
+	<view class="jifen">
+		<text>积分：0</text><text bindtap="routerAtten" data-type="atten">关注：{{gz_num}}</text><text bindtap="routerAtten" data-type="fans">粉丝：{{fans_num}}</text>
+	</view>
+	<view class="top-tab">
+		<view bindtap="tabRouter" data-type="collect"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab1.jpg"></image></view>
+		<view bindtap="tabRouter" data-type="article"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab2.jpg"></image></view>
+		<view data-type="jifen" bindtap="tabRouter"><image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user_tab3.jpg"></image></view>
+	</view>
+</view>
+<view class="tabbox">
+	<view class="viewlist-title" ><text></text><view>TA的作品集</view></view>
+</view>
+<view class="content" style="display: {{!nodata&&datalist.length>0?'block':'none'}};">
+	<block wx:for="{{datalist}}" wx:for-item="item" wx:key="{{key}}">
+		<view class="view-list" data-id="{{item.id}}" bindtap="router">
+			<view class="view-listdata">
+				<view class="view-listdataimg">
+					<image mode="widthFix" src="{{item.pic}}"></image>
+				</view>
+				<view class="view-listdata-des">
+					<view class="text">{{item.title}}</view>
+					<view class="date">{{item.post_date}}</view>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>
+<view class="view-list nodata" style="display: {{nodata?'block':'none'}};">
+		Ta还没有发布任何作品哟~
+	</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{nomore}}">
+  <view class="nomore" >--End--</view>
+</view>
+<!-- 底部 -->
+</view>
+</scroll-view>

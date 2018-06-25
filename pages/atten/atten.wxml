@@ -1,0 +1,34 @@
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;"  bindscrolltolower="bindDownLoad"  bindscroll='handleIndex' scroll-top="{{index.viewScrollTop}}" class="scroll_view"  >
+ <!-- <view class="title">Ta的粉丝</view> -->
+ <view class="dataList" style="display: {{!nodata?'block':'none'}};">
+    <view class="dataList-ul">
+     <block wx:for="{{datalist}}" wx:key="key" wx:fot-item="item">
+        <view class="dataList-li" catchtap="friend" data-id="{{identify=='atten'?item.openid:item.sub_openid}}">
+            <view class="headimg">
+              <image mode="widthFix" src="{{item.fans_userinfo.headimgurl}}"></image>
+            </view>
+            <view class="name">
+                <view class="username">{{item.fans_userinfo.nickname}}</view>
+                <view class="fans">粉丝：{{item.fans_num}}</view>
+            </view>
+            <view wx:if="{{attenShow}}" class="atten" catchtap="atten" data-status="{{item.is_guanzhu}}" data-openid="{{item.openid}}" data-sub="{{item.sub_openid}}" data-num="{{index}}">{{item.is_guanzhu ? '已关注':'未关注'}}</view>
+        </view>
+     </block>
+    </view>
+ </view>
+ <view class="nodata" style="display: {{nodata?'block':'none'}};">{{nodata_text}}</view>
+ <view class="Mb" bindtap="Cancel" data-state="cancle" style="display: {{Mb?'block':'none'}};">
+    <view class="Mb-box {{Mb?'bottom-in':''}} {{cancle?'bottom-down':''}}">
+        <view class="Mb-title">确定不再关注此人？</view>
+        <view class="Mb-sure" catchtap="Cancel" data-num="{{num}}" data-state="sure">确定</view>
+        <view class="Mb-cancel" catchtap="Cancel" data-state="cancle">取消</view>
+    </view>
+ </view>
+<loading hidden="{{loading_hidden}}">
+  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="backTop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{nomore}}">
+  <view class="nomore" >--End--</view>
+</view>
+</scroll-view>

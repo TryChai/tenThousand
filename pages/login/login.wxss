@@ -1,0 +1,147 @@
+page{background: #fff;}
+.loginBox{
+  padding-bottom:15%;
+}
+.loginMark{
+  overflow: hidden;
+  height:224rpx;
+  margin:0 10%;
+}
+.loginMark .userMark{
+  width: 20%;
+  padding:0 16%;
+  float: left;
+  border-right:2rpx solid #bfbfbf;
+}
+.loginMark .designMark{
+  width: 25.5%;
+  float: right;
+  padding:0 8%;
+}
+#from{
+  padding:5% 10%;
+}
+#from .phonebox{
+  width: 100%;
+  height: 99rpx;
+  overflow: hidden;
+  border:2rpx solid #ec6941;
+  border-radius: .5rem;
+  margin-bottom: 5%;
+  background: #eeeeee url(http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/login-phone.png) 0.5rem center/1.5rem auto no-repeat;
+}
+#from .phonebox .phone-input{
+  background: #eeeeee;
+   float: left;
+  margin-left: 16%;
+  width: 41.5%;
+}
+#from .phonebox input{
+  background: #eeeeee;
+  width: 100%;
+  color: #626262;
+  padding:0.3rem 0;
+  margin-top: 0%;
+  font-size: 32rpx;
+  height: 72rpx;
+}
+#from .phonebox .vcode-btn{
+  background: #ec6941;
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding:2% 5.5%;
+  margin-top: 2.7%;
+  margin-right: 3%;
+  border-radius: 50rpx;
+}
+#from .vcodebox{
+  width: 100%;
+  height: 99rpx;
+  overflow: hidden;
+  border:2rpx solid #ec6941;
+  border-radius: .5rem;
+  margin-bottom: 3%;
+  background: #eeeeee url(http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/login-vcode.png) 0.5rem center/1.5rem auto no-repeat;
+}
+#from .vcodebox .vcode-input{
+  background: #eeeeee;
+   float: left;
+  margin-left: 16%;
+  width: 45%;
+}
+#from .vcodebox input{
+  background: #eeeeee;
+  width: 100%;
+  color: #626262;
+  padding:0.3rem 0;
+  margin-top: 0%;
+  font-size: 32rpx;
+  height: 72rpx;
+}
+#from .vcodebox .vcode-btn{
+  background: #ec6941;
+  float: right;
+  color: #fff;
+  text-align: center;
+  padding:2.3% 4%;
+  margin-top: 2.7%;
+  margin-right: 3%;
+  border-radius: 50rpx;
+}
+.submit{
+  background:#ea6948;
+  color: #fff;
+  font-size: 34rpx;
+  width: 70%;
+  margin:auto;
+  border-radius: .6rem;
+  text-align: center;
+  text-indent: 30rpx;
+  letter-spacing: 30rpx;
+  padding:4.3% 0;
+  margin-top: 8%;
+}
+.Mb{
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,.8);
+  z-index: 99;
+}
+.user-fail{
+  width: 15rem;
+  margin:auto;
+  position: absolute;
+  top: 0%;
+  left:0%;
+  bottom:0%;
+  right: 0%;
+  height: 8rem;
+  z-index: 102;
+  background:#fff;
+  color: #626262;
+  border-radius: .8rem;
+}
+.user-fail .user-fail-title{
+  text-align: center;
+  font-size: 40rpx;
+  color: #ec6941;
+  font-weight: 900;
+  padding:3% 0;
+  margin-top: 5%;
+}
+.user-fail .user-fail-content{
+  padding:0 4%;
+  font-size: 30rpx;
+  line-height: 1.5rem;
+}
+.user-fail .user-fail-close{
+   position: absolute;
+  top: 8%;
+  right:5%;
+  width: 7%;
+}

@@ -1,0 +1,35 @@
+<view class="loginBox">
+    <image mode="widthFix" style="margin-top:-4%;" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/login-banner.jpg"></image>
+    <view class="loginMark">
+      <view class="userMark" bindtap="chooseUser"> <image mode="widthFix" src="{{userState?userimg.active:userimg.default}}"></image></view>
+      <view class="designMark" bindtap="chooseDesign"> <image mode="widthFix" src="{{designState?designimg.active:designimg.default}}"></image></view>
+    </view>
+    <view id="from">
+      <view class="phonebox">
+        <view class="phone-input">
+          <input type="number" maxlength="11" placeholder="输入手机号码" bindinput="getPhone" value=""></input>
+        </view>
+          <view class="vcode-btn" bindtap="sendVcode">{{vcode_text}}</view>
+      </view>
+      <view class="vcodebox">
+        <view class="vcode-input">
+          <input type="number" bindinput="getVcode" maxlength="11" placeholder="输入验证码"></input>
+        </view>
+          <!-- <view class="vcode-btn">获取验证码</view> -->
+      </view>
+        <view class="submit" bindtap="submit">登录</view>
+    </view>
+    <!-- 弹窗 -->
+    <view class="Mb" style="display: {{Mb?'block':'none'}};">
+        <!-- <view>
+            <view><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+            <view></view>
+        </view> -->
+        <view class="user-fail" style="display:{{notic?'block':'none'}};">
+            <view class="user-fail-close" bindtap="closeMb"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+            <view class="user-fail-title">{{fail_title}}</view>
+            <view class="user-fail-content">{{fail_content}}</view>
+        </view>
+    </view>
+<include src='/template/footerList/footerList.wxml'></include>
+</view>

@@ -1,0 +1,48 @@
+page{
+	background: #eee;
+}
+.search-box{
+	padding: 3% 3%;
+	display: flex;
+}
+.search-box .input{
+	background: #eeeeee url(http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/search.png) .5rem center/1rem no-repeat;
+	width: 75%;
+	height: 78rpx;
+	line-height: 78rpx;
+	border-radius: .5rem;
+	border:2rpx solid #7d7d7d;
+	padding-left: 9%;
+}
+.search-box .input input{
+	margin-top: 0;
+	border-radius: .5rem;
+	height: 74rpx;
+	line-height: 74rpx;
+	background: #eee;
+	padding:0rem 0;
+}
+.search-box .searchBtn{
+	height: 78rpx;
+	line-height: 78rpx;
+	border-radius: .5rem;
+	background: #ec6941;
+	color: #fff;
+	width: 20%;
+	text-align: center;
+	margin-left: 5%;
+	font-size: 30rpx;
+	letter-spacing: 10rpx;
+	text-indent: 10rpx;
+}
+.searchlist-title{
+	font-size: 24rpx;
+	padding: 2% 5%;
+}
+.search-li{
+	padding:3% 5%;
+	background:#fff;
+	font-size: 30rpx;
+	color: #313131;
+	border-bottom: 2rpx solid #dfdfdf;
+}

@@ -1,0 +1,82 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 20%;">
+<!-- 同城设计师头部 -->
+<view class="citydesign-top">
+	<image class="citydesign-topbg" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/tuobg.png?v=3"></image>
+	<view class="position">
+		<view class="position-img"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/position.png"></image></view>
+		<view class="position-text">你在<text bindtap="position">[{{currentCity}}]修改</text></view>
+	</view>
+	<view class="headimg"><image  mode="widthFix" src="{{userInfo.avatarUrl}}"></image></view>
+	<view class="name">
+		<text class="username">{{userInfo.nickName}}</text> <image class="sex-img" mode="widthFix" src="{{userInfo.gender == 1 ? sexImg.man : sexImg.femail}}"></image> | <image class="duan-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image> 
+		<text class="duanwei">王牌装饰家</text>
+	</view>
+	<view class="toptext" style="display: {{datalength > 0 ? 'block':'none'}};">您附近有{{datalength}}位设计师为你服务</view>
+</view>
+<view class="content">
+		<view class="view-list" style="display: {{datalength > 0 ? 'block':'none'}};">
+			<view class="viewlist-title"><text></text><view>你附近的设计师</view></view>
+			<block wx:for="{{datalist}}" wx:key="key" wx:for-item="item">
+				<view class="view-listdata">
+					<view class="view-listdata-title">
+						<view wx:if="{{item.headimgurl!=null&&item.headimgurl!=''}}" class="view-listdata-titleimg" bindtap="router" data-type="design" data-id="{{item.id}}"><image mode="widthFix" src="{{item.headimgurl}}"></image></view>
+						<view class="view-listdata-nickname">
+							<view class="view-listdata-username">{{item.title}}</view>
+							<view class="view-listdata-date">{{item.post_date}}</view>
+						</view>
+						<view class="design-btn" bindtap="router" data-type="design" data-id="{{item.id}}">设计师主页>></view>
+					</view>
+					<image mode="widthFix" src="{{item.pic}}" bindtap="router" data-type="detail" data-id="{{item.article_id}}"></image>
+					<view class="view-listdata-des" bindtap="router" data-type="detail" data-id="{{item.article_id}}">
+						<view>{{item.title}}</view>
+					</view>
+					<view class="viewlist-bottom" bindtap="router" data-type="detail" data-id="{{item.article_id}}">
+						<view class="dingwei">
+							<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/position.png"></image>
+							<text>{{item.address}}</text>
+						</view>	
+						<view class="yue">
+							<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+							<text>{{parseInt(item.view)-999 > 0 ? '999+':item.view}}</text>
+						</view>	
+					</view>
+				</view>
+			</block>
+		</view>
+		<view class="nodata" style="display: {{datalength <= 0 ? 'block':'none'}};">{{nodata_text}}</view>
+</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<view class="Mb" style="display: {{Mb?'block':'none'}};">
+	<view class="cityMb" style="display: {{cityMb?'block':'none'}};">
+		<view>
+			<text bindtap="changeCity" data-type="gz">【广州】</text>
+			<text bindtap="changeCity" data-type="cd">【成都】</text>
+		</view>
+		<view class="closeMb" bindtap="closeMb"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+	</view>
+	<view class="nocityMb" style="display: {{nocityMb?'block':'none'}};">
+		<view>
+			<text>十分抱歉，该城市尚未开通线上选择同城设计师功能，现为您推荐广州金牌设计师案例，如有需要可点击预约报名，系统会就近安排设计师为您服务！</text>
+		</view>
+		<view class="closeMb" bindtap="closeMb"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+		<view class="yuyuebtn" data-type='yuyue' bindtap="router">预约0元设计</view>
+	</view>
+</view>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{loading_box}}">
+  <view class="loading-massage" hidden="{{loading_msg}}">
+    <view class="loading-img" >
+       <image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loading.gif"></image> 
+    </view>
+    <view class="loading-text" >加载中</view>
+  </view>
+  <view class="nomore" hidden="{{nomore}}">--End--</view>
+</view>
+<!-- 底部 -->
+<include src='/template/footerList/footerList.wxml'></include>
+</view>
+</scroll-view>

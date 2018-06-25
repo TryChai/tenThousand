@@ -1,0 +1,56 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list "  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 20%;">
+
+<image mode="widthFix" src="{{banner}}"></image>
+<view class="tab-hot">
+	<view bindtap="timeChange"><image mode="widthFix" src="{{timeState == 0 ? time.default:time.active}}"></image></view>
+	<view bindtap="hotChange"><image mode="widthFix" src="{{hotState == 0 ? hot.default:hot.active}}"></image></view>
+</view>
+<view class="content" style="display: {{!nodata&&datalist.length>0?'block':'none'}}">
+	<block wx:for="{{datalist}}" wx:key="{{key}}" wx:for-item="item">
+		<view class="view-list">
+			<view class="viewlist-top" bindtap="router" data-id="{{item.id}}">
+				<view class="viewlist-tophead"><image mode="widthFix" src="{{item.user_header_img}}"></image></view>
+				<view class="viewlist-toptext">
+					<view class="viewlist-nickname">{{item.nickname}}</view>
+					<view class="viewlist-date">{{item.time}}</view>
+				</view>
+			</view>
+			<image bindtap="router" data-id="{{item.id}}" mode="widthFix" src="{{item.pic}}"></image>
+			<view class="viewlist-title" bindtap="router" data-id="{{item.id}}" ><view>{{item.title}}</view></view>
+			<view class="viewlist-bottom" bindtap="router" data-id="{{item.id}}">
+				<view class="yue">
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/eye.png"></image>
+					<text>{{parseInt(item.view) > 9999?'9999+':item.view}}</text>
+				</view>	
+				<view class="zan" catchtap ="zan" data-index="{{index}}">
+					<image class="{{item.zhuantai == 1?'zan-active':''}}"  mode="widthFix" src="{{item.zhuantai == 0?zan.default:zan.active}}"></image>
+					<text class="{{item.zhuantai == 1?'zan-text':''}}">{{parseInt(item.tags) > 9999?'9999+':item.tags}}</text>
+				</view>	
+				<view class="ping">
+					<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/ping.png"></image>
+					<text>{{parseInt(item.comment) > 9999?'9999+':item.comment}}</text>
+				</view>	
+			</view>
+		</view>
+	</block>
+</view>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<view class="nodata" style="display: {{nodata?'block':'none'}}">还没有设计师发布文章哟，去别的地方看看吧~</view>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{loading_box}}">
+  <view class="loading-massage" hidden="{{loading_msg}}">
+    <view class="loading-img" >
+       <image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loading.gif"></image> 
+    </view>
+    <view class="loading-text" >加载中</view>
+  </view>
+  <view class="nomore" hidden="{{nomore}}">--End--</view>
+</view>
+<!-- 底部 -->
+<include src='/template/footerList/footerList.wxml'></include>
+</view>
+</scroll-view>

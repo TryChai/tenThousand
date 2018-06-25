@@ -1,0 +1,111 @@
+page{
+	background: #eee;
+}
+swiper{
+	width:100%;
+	height: 350rpx;
+}
+.tab-hot{
+	margin-top: 1.5%;
+	background: #fff;
+	padding:3% 5%;
+	height: 30rpx;
+}
+.tab-hot view{
+	width:15%;
+	display: inline-block;
+}
+.tab-hot view:nth-child(1){
+	margin-right: 5%;
+}
+.view-list{
+	background: #fff;
+	margin-top: 3%;
+}
+.view-list .viewlist-top{
+	width: 100%;
+	padding:3%;
+	overflow: hidden;
+}
+.view-list .viewlist-top .viewlist-tophead{
+	width: 12%;
+	float: left;
+	margin-right: 3%;
+}
+.view-list .viewlist-top .viewlist-tophead image{
+	border-radius: 100%;
+}
+.view-list .viewlist-top .viewlist-toptext{
+	margin-top: 1%;
+}
+.view-list .viewlist-top .viewlist-nickname{
+	font-size: 25rpx;
+	color: #626262;
+}
+.view-list .viewlist-top .viewlist-date{
+	font-size: 22rpx;
+	color: #626262;
+}
+.view-list .viewlist-title{
+	padding:0 2.5%;
+	overflow: hidden;
+}
+.view-list .viewlist-title  view{
+	width:95%;
+	padding:2.5% 0;
+	font-size: 30rpx;
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	text-align: left;
+	margin:auto;
+	border-bottom: 2rpx solid #bfbfbf;
+}
+.viewlist-bottom {
+	overflow: hidden;
+	padding:2.7% 5%;
+}
+.viewlist-bottom view{
+	width:21%;
+	float: left;
+	margin-right: 0%;
+	/*overflow: hidden;*/
+}
+.viewlist-bottom view image{
+	width:40rpx;
+	float: left;
+	vertical-align: middle;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+.viewlist-bottom .zan image{
+	width:34rpx;
+	margin-top: 1%;
+}
+.viewlist-bottom .ping image{
+	width:34rpx;
+	margin-top: 4%;
+}
+.viewlist-bottom text{
+	font-size: 28rpx;
+}
+.zan-active{
+	animation: spin .5s ease-in-out;
+}
+@-webkit-keyframes spin {
+    0% {-webkit-transform: scale(1);}
+    50% {-webkit-transform: scale(1.3);}
+    100% {-webkit-transform: scale(1);}
+}
+.zan-text{
+	color: #ec6941;
+}
+.nodata{
+	margin-top: 3%;
+	background: #fff;
+	padding:25% 0;
+	font-size: 34rpx;
+	text-align: center;
+}

@@ -1,0 +1,37 @@
+<view class="title">
+	<view class="back" bindtap="back"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/back.png"></image></view>
+	<view class="title-text">创建真实案例</view>
+	<view class="next-step" data-type="info" bindtap="showMb">下一步</view>
+</view>
+<view class="little-title">第一步 房屋信息填写<view>（<text>*</text>必填，其他为选填）</view></view>
+<view class="datapick">
+ <block wx:for="{{picker}}" wx:key="key" wx:for-item="item">
+	<view class="pick-box">
+		<view class="label">{{item.text}}<text>*</text></view>	
+		<picker mode="selector" range="{{item.pickArr}}" data-t="{{index}}" value="{{item.pickArr[value]}}" bindchange="listenerPickerSelected">
+		    <text style="color:{{picktext[index].value  == '请选择'?'#ddd':'#313131'}}">{{picktext[index].value}}</text>
+		</picker>
+	</view>
+ </block>
+ <!-- <view class="pick-box">
+	<view class="label">设计师</view>	
+	<view class="design-check" bindtap="search">{{design_data == ''? '选填':design_data}}</view>
+ </view> -->
+ <view class="pick-box1">
+	<view class="notic"  data-type="notic" bindtap="showMb">本内容为本人原创 <image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notice.png"></image></view>	
+	<view class="switch">
+	    <switch checked="{{edit ? 'checked':''}}" bindchange="switchChange" color="#ec6941"/>
+	</view>
+ </view>
+</view>
+<view class="Mb" style="display: {{mbNotic?'block':'none'}};">
+	<view class="Mb-img">
+		<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notic-shengming.png?v=3"></image>
+		<view class="close-x" bindtap="closeMb"></view>
+	</view>
+</view>
+<view class="Mb2" style="display: {{mbInfo?'block':'none'}};" >
+	<view class="Mb-img"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notic-nocomplate.png"></image>
+		<view class="close-x" bindtap="closeMb"></view>
+	</view>
+</view>

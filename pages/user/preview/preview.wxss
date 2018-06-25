@@ -1,0 +1,163 @@
+page{
+	background: #eee;
+}
+.topstyle {
+	margin-bottom: 3%;
+}
+swiper {
+	display: block;
+	width: 100%;
+	height: 682.4rpx;
+}
+swiper-item image{
+	width: 100%;
+	height: 100%;
+}
+.swiper image{
+	width: 100%;
+	height: 100%;
+}
+.store-edtail{
+	padding-bottom: 13%;
+}
+/*关注栏*/
+.top-guanzhu{
+	height: 100rpx;
+	background: #fff;
+	position: relative;
+}
+.top-guanzhu .head{
+	width: 15%;
+	position: absolute;
+	top: -30%;
+	left: 3%;
+}
+.top-guanzhu .head image{
+	border-radius: 12rpx;
+	/*border:2rpx solid red;*/
+}
+.top-guanzhu .name{
+	position: absolute;
+	top: 8%;
+	left: 21%;
+}
+.top-guanzhu .name .username{
+	font-size: 30rpx;
+	font-weight: 900;
+	color: #313131;
+}
+.top-guanzhu .name .time{
+	font-size: 24rpx;
+	/*font-weight: 900;*/
+	color: #626262;
+}
+.top-guanzhu .atten{
+	position: absolute;
+	top: 17%;
+	right: 4%;
+	background: #ec6941;
+	padding:1.5% 5%;
+	color: #fff;
+	font-size: 28rpx;
+	border-radius: 34rpx;
+}
+.anli-box{
+	background: #fff;
+	margin-top: 2.5%;
+}
+.anli-box .anli-title{
+	padding:2% 0;
+	overflow: hidden;
+}
+.anli-box .anli-title text{
+   display:block;
+   width:2.1%;
+   height:50rpx;
+   background: #fff720;
+   vertical-align: middle;
+   margin-right: 2%;
+   /*margin-top: -1%;*/
+   float: left;
+}
+.anli-box .anli-title view{
+	font-size: 30rpx;
+	overflow: hidden;
+	color: #313131;
+}
+.anli-box .anli-xinxi{
+	overflow: hidden;
+	padding:0% 5%;
+	padding-bottom: 3%;
+}
+.anli-box .anli-xinxi .anli-icon{
+	float: left;
+	width: 5%;
+	margin-right:1.5%;
+	/*margin-top: 1%;*/
+}
+.anli-box .anli-xinxi .anli-lable{
+	float: left;
+	/*width: 30%;*/
+	font-size: 28rpx;
+	color: #626262;
+
+}
+.anli-box .anli-xinxi .anli-data{
+	float: left;
+	color: #a0a0a0;
+	font-size: 28rpx;
+	width:72%;
+}
+/*头部关注栏跟信息栏结束*/
+.content{
+	background: #fff;
+}
+.content .list-title{
+	padding:3%;
+	font-size: 30rpx;
+}
+.content .list-des{
+	padding:2% 3%;
+}
+.content .list-img{
+	padding:1%;
+	max-height: 420rpx;
+	overflow: hidden;
+}
+.content .list-img image{
+	margin-bottom: 2%;
+}
+.data-anli-li{
+  padding:3%;
+  position: relative;
+  padding-bottom: 0%;
+}
+.data-anli-li:last-child{
+   padding-bottom: 3%;
+}
+.data-anli-li .data-anli-title{
+	padding:2% 0%;
+	font-size: 30rpx;
+}
+.data-anli-li .tip{
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  margin-top: 0%;
+  color: #fff;
+  background: rgba(0,0,0,0.5);
+  border-radius: 40rpx;
+  padding: 1% 5%;
+  letter-spacing: 3rpx;
+  margin-top: 7%;
+}
+
+
+.top{
+	display: none;
+	width:75rpx;
+	position: fixed;
+	bottom: 5%;
+	right: 3%;
+	z-index: 99;
+}

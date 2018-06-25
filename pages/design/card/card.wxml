@@ -1,0 +1,106 @@
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list"  bindscrolltolower="bindDownLoad"  bindscroll="scroll">
+<view style="padding-bottom: 2%;">
+<!-- 同城设计师头部 -->
+<view class="citydesign-top">
+	<image class="citydesign-topbg" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/tuobg.png?v=3"></image>
+	<view class="headimg"><image  mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/head.png"></image></view>
+	<view class="edit" bindtap="edit" style="display: {{identify=='design'?'block':'none'}};"><image  mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/edit-card.png"></image></view>
+	<view class="name">
+		<text class="username">Aria</text> <image class="sex-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/man.png"></image> | <image class="duan-img" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image> 
+		<text class="duanwei">王牌装饰家</text>
+		<view class="atten" bindtap="atten" style="display: {{identify == 'user'?'block':'none'}};">{{atten ? '已关注':'+关注'}}</view>
+		<view class="question"> <image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/question.png"></image></view>
+	</view>
+	<view class="top-tab">
+		<view>积分：10086</view>
+		<view>关注：8888</view>
+		<view>粉丝：99999</view>
+	</view>
+	<view class="toptext">设计理念：只有符合客户的生活习惯的设计才是好设计</view>
+</view>
+<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/card_banner.jpg"></image>
+<view class="content">
+	<view class="view-list">
+		<view class="view-listdata">
+			<view class="view-listdataimg">
+				<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/index-banner.jpg"></image>
+				<view class="viewlist-bottom">
+					<view class="dingwei">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/position-white.png"></image>
+						<text>东风广场</text>
+					</view>	
+				</view>
+			</view>
+			<view class="view-listdata-des">
+				<view class="text">追求自然艺术智慧也灵感</view>
+				<view class="settop"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/settop.png"></image></view>
+			</view>
+		</view>
+	</view>
+	<view class="view-list">
+		<view class="view-listdata">
+			<view class="view-listdataimg">
+				<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/index-banner.jpg"></image>
+				<view class="viewlist-bottom">
+					<view class="dingwei">
+						<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/position-white.png"></image>
+						<text>东风广场</text>
+					</view>	
+				</view>
+			</view>
+			<view class="view-listdata-des">
+				<view class="text">追求自然艺术智慧也灵感</view>
+				<view class="settop"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/settop.png"></image></view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="swiper-box">
+	<swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}"  circular="{{circular}}" bindchange="bindchange" current="{{current}}">  
+		<block wx:for="{{swiper}}" wx:key="{{index}}">  
+		  <swiper-item >  
+		    <image src="{{item}}" mode="widthFix" bindload="imageLoad" class="itemimage" />  
+		  </swiper-item>  
+		</block>  
+	</swiper>
+	<view class="swiper-left" bindtap="swiperLeft"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/card-left.png"></image></view>
+	<view class="swiper-right" bindtap="swiperRight"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/card-right.png"></image></view>
+</view>
+<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/card_04.jpg"></image>
+<image mode="widthFix" bindtap="router" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/card_03.jpg"></image>
+<loading hidden="{{loading_hidden}}">
+	  加载中...
+</loading>
+<view class="Mb" style="display: {{Mb?'block':'none'}};">
+	<view class="nocityMb" style="display: {{nocityMb?'block':'none'}};">
+		<view class="nocityMb-title">编辑个人信息</view>
+		<view class="input-group">
+			<view class="label">姓<text class="letter-spacing"></text>名</view>
+			<view class="input"><input type="text" ></input></view>
+		</view>
+		<view class="input-group">
+			<view class="label">设计理念</view>
+			<view class="input"><input type="text" ></input></view>
+		</view>
+		<view class="input-group">
+			<view class="label">门店地址</view>
+			<view class="input"><input type="text" ></input></view>
+		</view>
+		<view class="closeMb" bindtap="closeNocity"><image mode="widthFix" bindtap="closeMb"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/close.png"></image></view>
+		<view class="yuyuebtn">确认修改</view>
+	</view>
+</view>
+<image mode="widthFix" hidden="{{top}}" bindtap="totop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" hidden="{{loading_box}}">
+  <view class="loading-massage" hidden="{{loading_msg}}">
+    <view class="loading-img" >
+       <image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loading.gif"></image> 
+    </view>
+    <view class="loading-text" >加载中</view>
+  </view>
+  <view class="nomore" hidden="{{nomore}}">--End--</view>
+</view>
+<!-- 底部 -->
+</view>
+</scroll-view>

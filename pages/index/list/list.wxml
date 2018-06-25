@@ -1,0 +1,54 @@
+
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;"  bindscrolltolower="bindDownLoad"  bindscroll='handleIndex' scroll-top="{{index.viewScrollTop}}" class="scroll_view"  >
+<swiper class="swiper" indicator-dots="{{indicatorDots}}" vertical="{{vertical}}" autoplay="{{autoplay}}" duration="{{duration}}"  circular="{{circular}}" >  
+  <block wx:for="{{swiper}}" wx:key="{{index}}">  
+    <swiper-item >  
+      <image src="{{item}}" mode="widthFix"  />  
+    </swiper-item>  
+  </block>  
+</swiper>
+ <view class="nav">
+    <block wx:for="{{nav}}" wx:key="key" wx:for-item="item">
+        <view><image mode="widthFix" data-index="{{index}}" bindtap="navTo" src="{{item}}"></image></view>
+    </block>
+ </view> 
+ <block wx:for="{{tuijian}}" wx:key="{{key}}" wx:for-item="item">
+  <block wx:if="{{item.type == 1}}">
+   <view class="view-box" bindtap="viewtap" data-id="{{item.id}}" data-type="1">
+      <view class="view-title"><text></text>今日主题</view>
+      <view class="view-img">
+          <image mode="widthFix" src="{{item.pic}}"></image>
+          <view class="view-content">{{item.title}}</view>
+      </view>
+   </view> 
+  </block>
+  <block wx:if="{{item.type == 3}}">
+   <view class="view-box" bindtap="viewtap" data-id="{{item.id}}" data-type="3">
+      <view class="view-title"><text></text>屋主分享</view>
+      <view class="view-img">
+          <image mode="widthFix" src="{{item.pic}}"></image>
+          <view class="view-content">{{item.title}}</view>
+      </view>
+   </view> 
+  </block>
+  <block wx:if="{{item.type == 2}}">
+   <view class="view-box" bindtap="viewtap" data-id="{{item.id}}" data-type="2">
+      <view class="view-title"><text></text>设计精品</view>
+      <view class="view-img">
+          <image mode="widthFix" src="{{item.pic}}"></image>
+          <view class="view-content">{{item.title}}</view>
+      </view>
+   </view> 
+  </block>
+ </block>   
+<loading hidden="{{loading_hidden}}">
+  加载中...
+</loading>
+<image mode="widthFix" hidden="{{top}}" bindtap="backTop" class="totop" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/up-top.png"></image>
+<view class="loading-box" >
+ <view class="nomore">--End--</view>
+</view>
+<view class="bottom"></view>
+<!-- 底部 -->
+<include src='/template/footerList/footerList.wxml'></include>
+</scroll-view>

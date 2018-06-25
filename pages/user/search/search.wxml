@@ -1,0 +1,16 @@
+<veiw class="search-box">
+  <view class="input">
+	<input type="text" bindinput="searchInput" value="" placeholder="搜索设计师"></input>
+  </view>
+	<view class="searchBtn" bindtap="search">完成</view>
+</veiw>
+<view class="search-list" style="display: {{datalist.length>0 && !nomore ? 'block':'none'}}">
+	<view class="searchlist-title">最佳匹配</view>
+	<block wx:for="{{datalist}}" wx:key="key" wx:for-item="item">
+		<view class="search-li" data-id="{{item.id}}" data-name="{{item.nickname}}" bindtap="getSearch">{{item.nickname}}</view>
+	</block>
+</view>
+<view class="search-list" style="display: {{nomore ? 'block':'none'}}">
+	<view class="searchlist-title">最佳匹配</view>
+	<view class="search-li" style="padding:8% 5%">没有找到相关设计师，换个名字试试~</view>
+</view>

@@ -1,0 +1,65 @@
+<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/index-banner.jpg"></image>
+ <view class="nav">
+    <block wx:for="{{nav}}" wx:key="key" wx:for-item="item">
+        <view><image mode="widthFix" data-index="{{index}}" bindtap="navTo" src="{{item}}"></image></view>
+    </block>
+ </view> 
+  <view class="databox">
+      <view class="databox-top">
+          <view class="databox-topimg"><image mode="widthFix" src="{{userInfo.avatarUrl}}"></image></view>
+          <view class="databox-toptext">
+              <view class="username"><text>{{userInfo.nickName}}</text><image class="sexmark" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/man.png"></image></view>
+              <view class="zhicheng"><text>金牌设计师</text><image class="sexmark" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/jiangpai.png"></image></view>
+          </view>
+          <view class="databox-loginout">【退出当前账户】</view>
+      </view>
+      <view class="liangchi">
+          <view class="liangchi-left">
+              <view class="number">{{liangchiNum}}</view>        
+              <view class="text">本月量尺数</view>        
+          </view>
+          <view class="liangchi-right">
+              <view class="number">86</view>        
+              <view class="text">本月积分</view>        
+          </view>
+      </view>
+      <view class="datebox">
+          <view class="date-bg">
+            <picker mode="date" value="{{stardate}}" start="2007-09-01" end="{{today}}" bindchange="bindStardate">  
+            <view class="picker">  
+              开始时间: {{stardate}}  
+            </view>  
+            </picker>
+          </view>
+          <view class="date-bg">
+            <picker mode="date" value="{{enddate}}" start="2007-09-01" end="{{today}}" bindchange="bindEnddate">  
+            <view class="picker">  
+              结束时间: {{enddate}}  
+            </view>  
+            </picker>
+          </view>
+      </view>
+      <view class="designdata">
+          <view class="yuedu">
+            <view>阅读量：99999</view>
+            <view>可用积分：99999</view>
+          </view>
+          <view class="baodata">
+            <view>报名次数：9999</view>
+            <view>量尺数：9999</view>
+            <view>报分数：9999</view>
+          </view>
+      </view>
+  </view>
+<loading hidden="{{loading_hidden}}">
+  加载中...
+</loading>
+<view class="loading-box" hidden="{{loading_box}}">
+  <view class="loading-massage" hidden="{{loading_msg}}">
+    <view class="loading-img" >
+       <image mode="widthFix"  src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/loading.gif"></image> 
+    </view>
+    <view class="loading-text" >加载中</view>
+  </view>
+  <view class="nomore" hidden="{{nomore}}">--End--</view>
+</view>

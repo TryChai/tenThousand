@@ -1,0 +1,36 @@
+{
+  "pages":[
+    "pages/index/list/list",
+    "pages/jingxuan/list/list",
+    "pages/jingxuan/detail/detail",
+    "pages/citydesign/list/list",
+    "pages/shaijia/list/list",
+    "pages/designlist/list/list",
+    "pages/shaijia/detail/detail",
+    "pages/designlist/detail/detail",
+    "pages/login/login",
+    "pages/user/index/index",
+    "pages/user/friend/friend",
+    "pages/user/search/search",
+    "pages/user/firststep/firststep",
+    "pages/user/secondstep/secondstep",
+    "pages/user/thirdstep/thirdstep",
+    "pages/user/fourstep/fourstep",
+    "pages/user/preview/preview",
+    "pages/user/collect/collect",
+    "pages/design/index/index",
+    "pages/design/card/card",
+    "pages/design/reels/reels",
+    "pages/atten/atten",
+    "pages/yuyue/haslogin/yuyue",
+    "pages/yuyue/nologin/yuyue"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1c1b20",
+    "navigationBarTitleText": "一万套家居案例",
+    "navigationBarTextStyle":"#fff"
+  }
+}
+
+

@@ -1,0 +1,6 @@
+{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "{{title}}",
+    "navigationBarTextStyle":"black"
+}

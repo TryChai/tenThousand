@@ -1,0 +1,67 @@
+<view class="top" style="display: {{!nocontent?'block':'none'}}">
+	<view class="title">
+		<view class="back" bindtap="back"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/back.png"></image></view>
+		<view class="title-text">创建真实案例</view>
+	</view>
+	<view class="datapick">
+		<block wx:for="{{contenttab}}" wx:key="key" wx:for-item="item">
+			 <view class="pick-box" data-index="{{index}}" bindtap="edit">
+				<view class="label">
+					<view class="tubiao">
+						<image mode="widthFix" src="{{item.img}}"></image>
+					</view>
+					<text>{{item.text}}</text>
+					<view class="edit"><image mode="widthFix" src="{{item.status?editimg:addimg}}"></image></view>
+				</view>	
+			 </view>
+		</block>
+	</view>
+	<view class="btn">
+		<view style="background:{{btnState?'ec6941':'#dfdfdf'}};" bindtap="Btn" data-type="view">预览</view>
+		<view style="background:{{btnState?'ec6941':'#dfdfdf'}};" bindtap="Btn" data-type="send">发布</view>
+	</view>
+</view>
+<view class="getpicture" style="display: {{nocontent?'block':'none'}}">
+	<view class="title">
+		<view class="back2" bindtap="backT"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/back2.png"></image></view>
+		<view class="title-text">{{title_text}}</view>
+		<view class="save" data-style="{{type}}" data-num="{{num}}" bindtap="save">保存</view>
+	</view>
+	<textarea bindinput="write" wx:if="{{textareashow}}" selection-start="{{ cursorIndex }}"
+    selection-end="{{ cursorIndex }}" class="textarea" maxlength='99999' value="{{textarea}}" placeholder="{{placeholder}}" />
+	<view class="photo-box">
+		<image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/user-edit.jpg"></image>
+		<view class="photoBtn" bindtap="mbShow" data-type="Mbphoto" data-num="{{num}}"></view>
+	</view>
+	<view class="imgPrew" wx:if="{{imgPrew.length>0}}">
+		<block wx:for="{{imgPrew}}" wx:key="key" wx:for-item="item">
+			<view class="img-prew">
+				<image mode="aspectFill" style="width: 100%;height: 200rpx;" src="{{item}}"></image>
+				<image class="close" data-id="{{index}}" data-num="{{num}}" bindtap="detele" mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/icon-close.jpg"></image>
+			</view>
+		</block>
+	</view>
+</view>
+<view class="Mb2" style="display: {{mbInfo?'block':'none'}};" >
+	<view class="Mb-img"><image mode="widthFix" src="http://img1.homekoocdn.com/html/weixin/hyuser_sys/tenThousand_miniprogram/images/notic-nocomplate.png"></image>
+		<view class="close-x" catchtap="mbShow" data-type="mbInfo" data-num="{{num}}"></view>
+	</view>
+</view>
+<view class="Mb" style="display:{{Mb?'block':'none'}};" bindtap="mbShow" data-type="cancel" data-num="{{num}}">
+	<view class="Mb-img" style="display:{{Mbphoto?'block':'none'}};">
+		<view class="mb-title">“一万套家居案例”想访问您的照片</view>
+		<view class="mb-btn">
+			<view catchtap="mbShow" data-type="no"  data-num="{{num}}">不允许</view>
+			<view catchtap="mbShow" data-type="yes" data-num="{{num}}">好</view>
+		</view>
+	</view>
+	<view style="display:{{!Mbphoto?'block':'none'}};">
+		<view class="Mbbottom-box {{bottomShow?'bottom-up':'bottom-down'}}">
+			<view class="Mb-bottom " > 
+				<view data-style="{{type}}" data-type="camera" bindtap="chooseImg" data-num="{{num}}">拍照</view>
+				<view data-style="{{type}}" data-type="album" bindtap="chooseImg" data-num="{{num}}">从手机相册选择</view>
+			</view>
+			<view class="cancle" catchtap="mbShow" data-type="cancel" data-num="{{num}}">取消</view>
+		</view>
+	</view>
+</view>

@@ -1,0 +1,362 @@
+page{
+	background: #eee;
+}
+.padding{
+	padding-bottom:19%;
+}
+/*同城设计师头部*/
+.citydesign-top{
+	width: 100%;
+	/*height: 520rpx;*/
+	background: #fff;
+	padding-bottom: 3%;
+	position: relative;
+}
+.citydesign-top .headimg{
+	margin:auto;
+	width: 20%;
+	margin-top: -14%;
+}
+.citydesign-top .loginout{
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	/*width: 30%;*/
+	font-size: 24rpx;
+	color: #ec6941;
+}
+.citydesign-top .headimg image{
+	border-radius: 100%;
+}
+.citydesign-top .jifen{
+	display: flex;
+	width: 65%;
+	margin:auto;
+}
+.citydesign-top .jifen text{
+	width: 33%;
+	text-align: center;
+	font-size: 26rpx;
+	font-weight: 900;
+}
+.citydesign-top .name{
+	width: 100%;
+	margin:2% 0;
+	text-align: center;
+	/*margin-bottom: 3%;*/
+	position: relative;
+}
+.citydesign-top .name .username{
+	font-size: 36rpx;
+	font-weight: 900;
+	color: #313131;
+}
+.citydesign-top .name image{
+	width: 38rpx;
+	/*margin-top: 1%;*/
+	margin:0 1%;
+	vertical-align: middle;
+	display: inline-block;
+}
+.citydesign-top .name .sex-img{
+	width: 45rpx;
+}
+.citydesign-top .name .duan-img{
+	width: 35rpx;
+}
+.citydesign-top .name .duanwei{
+	font-size: 30rpx;
+	color: #313131;
+}
+.citydesign-top .name .atten{
+	position: absolute;
+	top: 0%;
+	right: 2%;
+	background: #ec6941;
+	color: #fff;
+	padding:1% 3.5%;
+	border-radius:100rpx;
+}
+.citydesign-top .name .question{
+	position: absolute;
+	top: -33%;
+	right: 19%;
+	width: 10%;
+}
+.citydesign-top .name .question image{
+	width:32rpx;
+}
+.citydesign-top .top-tab{
+	display: flex;
+	padding:2% 2%;
+}
+.citydesign-top .top-tab view image{
+	width: 126rpx;
+	margin:auto;
+}
+.citydesign-top .top-tab view text{
+	font-size: 26rpx;
+
+}
+.citydesign-top .top-tab view{
+	width: 33.3%;
+	text-align: center;
+	color: #313131;
+	font-weight: 900;
+}
+.citydesign-top .addRell{
+	background: #ec6941;
+	width: 65%;
+	margin:auto;
+	color: #fff;
+	border-radius: 80rpx;
+	font-size: 30rpx;
+	letter-spacing: 5rpx;
+	text-indent: 5rpx;
+	text-align: center;
+}
+.citydesign-top .toptext{
+	font-size: 26rpx;
+	text-align: center;
+	width: 100%;
+	color: #313131;
+}
+.tabbox{
+	/*margin-top: 1.8%;*/
+	position: relative;
+}
+.viewlist-title{
+	padding:2.5% 0;
+	background: #fff;
+	overflow: hidden;
+}
+.viewlist-title text{
+   display:block;
+   width:2.1%;
+   
+   height:45rpx;
+   background: #fff720;
+   vertical-align: middle;
+   margin-right: 2%;
+   /*margin-top: -1%;*/
+   float: left;
+}
+.viewlist-title view{
+	font-weight: 900;
+   font-size: 32rpx;
+   padding:0 3% 0 4%;
+}
+.tab-hot{
+	position: absolute;
+	top: -12%;
+	right: 0%;
+	width: 35%;
+	margin-top: 1.5%;
+	background: transparent;
+	padding:3% 5%;
+	height: 30rpx;
+}
+.tab-hot view{
+	width:40%;
+	display: inline-block;
+}
+.tab-hot view:nth-child(1){
+	margin-right: 15%;
+}
+.view-list{
+	background: #fff;
+	/*margin-bottom: 3%;*/
+}
+.view-listdata{
+	border-bottom: 25rpx solid #eee;
+}
+.view-listdata .view-listbox{
+	display: flex;
+	padding:0 3%;
+}
+
+.view-listdata .view-listdataimg{
+	position: relative;
+	width: 50%
+}
+.view-listdata-title{
+	overflow: hidden;
+	width: 100%;
+	padding:3% 4%;
+	background: #fff;
+}
+
+.view-listdata-des{
+	/*display: flex;*/
+	position: relative;
+	/*padding:0 3%;*/
+	text-align: left;
+	font-size: 30rpx;
+	color: #626262;
+	font-weight: 900;
+	width: 50%;
+	height: 230rpx;
+	overflow: hidden;
+}
+.view-listdata-des .text{
+	padding: 2% 0;
+	width: 95%;
+	margin:auto;
+	display: block;
+	word-wrap:break-word;
+	/*height: 230rpx;*/
+	/*border-bottom: 2rpx solid #bfbfbf;*/
+	overflow : hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+.viewlist-bottom .favor{
+	float: right;
+	width: 4%;
+	padding:0 2%;
+	margin-top: 2%;
+}
+.viewlist-bottom .favor image{
+	width:34rpx;
+	margin-top: 4%;
+}
+.viewlist-bottom {
+	position: relative;
+	overflow: hidden;
+	padding:2.7% 5%;
+}
+.viewlist-bottom view{
+	width:21%;
+	float: left;
+	margin-right: 0%;
+	/*overflow: hidden;*/
+}
+.viewlist-bottom view image{
+	width:40rpx;
+	float: left;
+	vertical-align: middle;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+.viewlist-bottom .zan image{
+	width:34rpx;
+	margin-top: 1%;
+}
+.viewlist-bottom .ping image{
+	width:34rpx;
+	margin-top: 4%;
+}
+.viewlist-bottom text{
+	font-size: 28rpx;
+}
+.viewlist-bottom .write{
+	position: absolute;
+	/*width: 30%;*/
+	top: 21%;
+	right: -3%;
+}
+.viewlist-bottom .write image{
+	width: 100rpx;
+}
+.zan-active{
+	animation: spin .5s ease-in-out;
+}
+.nodata{
+	text-align: center;
+	padding:15% 0;
+	font-size: 34rpx;
+}
+@-webkit-keyframes spin {
+    0% {-webkit-transform: scale(1);}
+    50% {-webkit-transform: scale(1.3);}
+    100% {-webkit-transform: scale(1);}
+}
+.zan-text{
+	color: #ec6941;
+}
+.viewlist-bottom .viewlist-bottom-date{
+	position: absolute;
+	top: 27%;
+	right: -2%;
+	font-size: 26rpx;
+	color: #626262;
+	width: 30%;
+}
+.Mb{
+	position: fixed;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.8);
+	z-index: 99;
+}
+.nocityMb{
+	/*display: none;*/
+	position: absolute;
+	top: 5%;
+	left: 0%;
+	right: 0%;
+	margin:auto;
+	background: #fff;
+	border-radius: .5rem;
+	width: 80%;
+	/*height:14.5rem;*/
+	padding:4%;
+	/*padding-top: 6%;*/
+}
+.nocityMb-title{
+	text-align: center;
+	font-size: 40rpx;
+	font-weight: 900;
+}
+.input-group{
+	display: flex;
+	margin-top:.6rem;
+}
+.input-group .label{
+	width: 23%;
+	color: #313131;
+	font-size: 30rpx;
+	/*padding-top: 4%;*/
+	line-height: 2rem;
+}
+.input-group .label .letter-spacing{
+	width: 60rpx;
+	display: inline-block;
+}
+
+.input-group .input{
+	line-height: 1rem;
+	width: 70%;
+}
+.input-group .input input{
+	background: #eee;
+	width: 100%;
+	margin-top: 0;
+	border:2rpx solid #bfbfbf; 
+	border-radius: .3rem;
+}
+.yuyuebtn{
+	background: #ec6941;
+	color: #fff;
+	width: 70%;
+	margin:auto;
+	text-align: center;
+	margin-top: 6%;
+	padding:2.5% 0;
+	border-radius: 30rpx;
+	font-size: 34rpx;
+	letter-spacing: 5rpx;
+}
+.closeMb{
+	position: absolute;
+	top: 4%;
+	right: 4%;
+	width: 6%;
+}
+.totop{
+	bottom: 5%;
+}
